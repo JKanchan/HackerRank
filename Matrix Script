@@ -1,0 +1,27 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+
+nm = input().split()
+n = int(nm[0])
+m = int(nm[1])
+matrix = []
+
+for _ in range(n):
+    matrix_item = input()
+    matrix.append(matrix_item)
+    
+decode = ''
+for i in range(m):
+    for j in range (n):
+        decode +=(matrix[j][i])
+    
+print(re.sub(r"(?<=\w)([^\w]+)(?=\w)", " ", decode))
+
